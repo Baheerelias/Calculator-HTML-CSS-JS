@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li id="sub-1" onclick="submenu()"><a href="#">Admission</a>
+                    <ul class="sub-menu-1">
+                        <li><a href="#">Admission Process</a></li>
+                        <li><a href="#">Admission Requirment</a></li>
+                        <li id="sub-2" onclick="submenu()"><a href="#">Programs</a>
+                            <ul class="sub-menu-1">
+                                <li><a href="#">BCS</a>
+                                <li><a href="#">BBA</a>
+                                <li><a href="#">BMCJ</a>
+                                <li><a href="#">BPS</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Scholorship</a></li>
+            </ul>
+        </nav>  
+    </div>
+<script>
+
+
+let showmenu=document.getElementsByClassName('sub-menu-1')[0];
+// let showmenu2=document.getElementsByClassName('sub-min-2')[0];
+function submenu(){
+    if(showmenu.classList.contains('sub-menu-show')){
+showmenu.classList.remove('sub-menu-show');
+    }else{
+        showmenu.classList.add('sub-menu-show');
+    }
+    
+}
+
+// function submenu2(){
+//     if(showmenu2.classList.contains('sub-menu-show')){
+//         showmenu2.classList.remove('sub-menu-show');
+
+//     }else{
+//         showmenu2.classList.add('sub-menu-show');
+//     }
+// }
+</script>
+</body>
+
+</html>
