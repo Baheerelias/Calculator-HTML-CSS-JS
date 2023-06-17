@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="table.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box-input">
+        <input class="title-field" type="text" name="" id="">
+        <button onclick="addTodo(event)">add</button>
+    </div>
+    <div class="box list-box">
+       
+    </div>
+
+    <div class="alert">
+
+    </div>
+    
+    <script>
+        const inputField = document.getElementsByClassName('title-field')[0];
+        const listBox = document.getElementsByClassName('list-box')[0];
+        const alertbox=document.getElementsByClassName('alert')[0];
+        const addTodo = (event) => {
+            let parent = event.target.parentNode;
+            if(inputField.value.length > 0){
+                listBox.innerHTML += ` <div class="list-item">
+            <p>${inputField.value}</p>
+            <button onclick="removeItem(event)" class="btn">-</button>
+        </div>`;
+            }else{
+                alertbox.classList.add('show');
+                alertbox.innerHTML =`Please enter value`;
+                setTimeout(()=>{
+                    alertbox.classList.remove('show')
+                },3000)
+                
+            }
+            
+           
+        }
+        const removeItem = (event)=>{
+            event.target.parentNode.remove()
+        }
+    </script>
+</body>
+</html>

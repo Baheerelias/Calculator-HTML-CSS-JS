@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li id="sub-1" onclick="minimize(event,'.sub-menu-1')">
+            <a href="#">Admission</a>
+            <ul class="sub-menu-1">
+              <li><a href="">Admission Process</a></li>
+              <li><a href="">Admission Requirment</a></li>
+              <li id="sub-2"  onclick="minimize(event,'.sub-min-2')">
+                <a href="#" >Programs</a>
+                <ul class="sub-min-2">
+                  <li><a href="">BCS</a></li>
+                  <li><a href="">BBA</a></li>
+                  <li><a href="">BMCJ</a></li>
+                  <li><a href="">BPS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">Scholorship</a></li>
+        </ul>
+      </nav>
+    </div>
+    <script>
+      // let showmenu=document.getElementsByClassName('sub-menu-1')[0];
+      // let showmenu2=document.getElementsByClassName('sub-min-2')[0];
+      // function submenu(){
+      //     if(showmenu.classList.contains('sub-menu-show')){
+      // showmenu.classList.remove('sub-menu-show');
+      //     }else{
+      //         showmenu.classList.add('sub-menu-show');
+      //     }
+
+      // }
+
+      //  function submenu2(){
+      //      if(showmenu2.classList.contains('sub-menu-show')){
+      //         showmenu2.classList.remove('sub-menu-show');
+
+      //     }else{
+      //          showmenu2.classList.add('sub-menu-show');
+      //     }
+      // }
+
+      function minimize(event,targetClass) {
+        let box = event.target.parentNode.parentNode.querySelectorAll(
+          targetClass+":not(.sub-menu-show)"
+        )[0];
+        if (box === undefined) {
+          box =
+            event.target.parentNode.parentNode.querySelectorAll(
+              targetClass
+            )[0];
+        }
+        if(box ==undefined){
+          return;
+        }
+        if (box.classList.contains("sub-menu-show")) {
+          box.classList.remove("sub-menu-show");
+          let chlidelement=box.querySelectorAll('.sub-min-2');
+        
+          for (let index = 0; index < chlidelement.length; index++) {
+            chlidelement[index].classList.remove('sub-menu-show');
+          }
+        } else {
+          box.classList.add("sub-menu-show");
+        }
+      }
+
+
+      function minimize1(event) {
+        let box = event.target.parentNode.parentNode.querySelectorAll(
+          ".sub-min-2:not(.sub-menu-show)"
+        )[0];
+        if (box === undefined) {
+          box =
+            event.target.parentNode.parentNode.querySelectorAll(
+              ".sub-min-2"
+            )[0];
+        }
+        if (box.classList.contains("sub-menu-show")) {
+          box.classList.remove("sub-menu-show");
+        } else {
+          box.classList.add("sub-menu-show");
+        }
+      }
+    </script>
+  </body>
+</html>

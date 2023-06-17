@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.box{
+    max-width: 320px;
+    background-color: bisque;
+    min-height: 80px;
+}
+.list-item{
+    border: 2px  dotted #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+}
+.list-item .btn{
+    background-color: transparent;
+    border: none;
+}
+
+
+.alert{
+    background-color: antiquewhite;
+    max-width: 320px;
+    max-height: 80px;
+position: fixed;
+right: 10px;
+display: none;
+}
+
+.alert.show{
+display: block;
+}
